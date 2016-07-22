@@ -1,7 +1,10 @@
-var Nested = require( 'nestedtypes' ),
-    React  = require( 'react' );
+/*var Nested = require( 'nestedtypes' ),
+    React  = require( 'react' );*/
 
-function parseProps( props ){
+import React from 'react';
+import Nested from 'nestedtypes';
+
+export function parseProps( props ){
     var propTypes = {},
         defaults,
         modelProto = Nested.Model.defaults( props ).prototype;
@@ -25,8 +28,8 @@ function parseProps( props ){
 
 var PropTypes = React.PropTypes;
 
-function Node(){}
-function Element(){}
+export function Node(){}
+export function Element(){}
 
 function translateType( Type ){
     switch( Type ){
@@ -55,6 +58,6 @@ function translateType( Type ){
     }
 }
 
-exports.Node = Node;
+/*exports.Node = Node;
 exports.Element = Element;
-exports.parseProps = parseProps;
+exports.parseProps = parseProps;*/

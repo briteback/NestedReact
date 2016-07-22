@@ -2,8 +2,8 @@
 var ArrayProto = Array.prototype,
     ObjectProto = Object.prototype;
 
-exports.jsonNotEqual = jsonNotEqual;
-function jsonNotEqual( objA, objB) {
+//exports.jsonNotEqual = jsonNotEqual;
+export function jsonNotEqual( objA, objB) {
     if (objA === objB) {
         return false;
     }

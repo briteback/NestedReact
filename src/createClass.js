@@ -1,7 +1,12 @@
-var React      = require( 'react' ),
+/*var React      = require( 'react' ),
     Nested     = require( 'nestedtypes' ),
     pureRender = require( './purerender-mixin' ),
-    propTypes  = require( './propTypes' );
+    propTypes  = require( './propTypes' );*/
+
+import React from 'react';
+import Nested from 'nestedtypes';
+import pureRender from './purerender-mixin';
+import { parseProps } from './propTypes';
 
 function forceUpdate(){ this.forceUpdate(); }
 
@@ -91,13 +96,13 @@ function createClass( spec ){
     // process context specs...
     var context = getTypeSpecs( spec, 'context' );
     if( context ){
-        spec.contextTypes = propTypes.parseProps( context ).propTypes;
+        spec.contextTypes = parseProps( context ).propTypes;
         delete spec.context;
     }
 
     var childContext = getTypeSpecs( spec, 'childContext' );
     if( childContext ){
-        spec.childContextTypes = propTypes.parseProps( childContext ).propTypes;
+        spec.childContextTypes = parseProps( childContext ).propTypes;
         delete spec.childContext;
     }
 
@@ -115,7 +120,7 @@ function createClass( spec ){
     var props = getTypeSpecs( spec, 'props' );
 
     if( props ){
-        var parsedProps = propTypes.parseProps( props );
+        var parsedProps = parseProps( props );
 
         spec.propTypes = parsedProps.propTypes;
 
@@ -188,4 +193,5 @@ function getTypeSpecs( spec, name1, name2 ){
     return attributes;
 }
 
-module.exports = createClass;
+//module.exports = createClass;
+export default createClass;

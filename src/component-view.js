@@ -1,6 +1,6 @@
-var React    = require( 'react' ),
+/*var React    = require( 'react' ),
     _        = require( 'underscore' ),
-    ReactDOM = require( 'react-dom' );
+    ReactDOM = require( 'react-dom' );*/
 
 module.exports.use = function( View ){
     var dispose    = View.prototype.dispose || function(){},
@@ -24,7 +24,7 @@ module.exports.use = function( View ){
         // cached instance of react component...
         component : null,
         prevState : null,
-        
+
         resize : function(){
             Page.forceResize();
         },

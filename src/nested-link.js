@@ -1,7 +1,11 @@
-var Nested = require( 'nestedtypes' ),
-    Link   = require( 'valuelink' );
+/*var Nested = require( 'nestedtypes' ),
+    Link   = require( 'valuelink' );*/
 
-module.exports = Nested.Link = Link;
+import Nested from 'nestedtypes';
+import Link from 'valuelink';
+
+//module.exports = Nested.Link = Link;
+Nested.link = Link;
 Object.extend.attach( Link );
 
 /**
@@ -155,3 +159,5 @@ Nested.link = function( reference ){
     options.Attribute = LinkAttribute;
     return options;
 };
+
+export default Link;
