@@ -10,9 +10,6 @@ import createClass from './createClass';
 import { Node, Element } from './propTypes';
 import Link from './nested-link';
 
-console.error("Brave new world nestedreact");
-
-
 // extend React namespace
 const NestedReact = Object.create( React );
 
