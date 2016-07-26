@@ -85,15 +85,15 @@ var ModelState = {
     componentDidMount : function(){
         var events = this.listenToState;
         // debounce force update to for better performance when state is set multiple times in the same frame
-        this.forceUpdate = debounce(this.forceUpdate, 16, {
-          maxWait: 250
-        });
+        //this.forceUpdate = debounce(this.forceUpdate, 16, {
+        //  maxWait: 250
+        //});
         events && this.listenTo( this.model, events, forceUpdate );
     },
 
     componentWillUnmount : function(){
         this.model._owner = null;
-        this.forceUpdate.cancel();
+        //this.forceUpdate.cancel();
     }
 };
 
